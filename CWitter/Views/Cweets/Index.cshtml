@@ -1,0 +1,26 @@
+﻿@model CWitter.ViewModels.CweetListViewModel
+
+@{
+    ViewData["Title"] = "Ziņojumi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="column is-half">
+    @if (Model.Search != null)
+    {
+        <h1 class="title">Meklēšanas rezultāti:</h1>
+    }
+
+    @foreach (var cweet in Model.Cweets)
+    {
+        <div class="box">
+            <p>
+                <h3 class="title">@@@cweet.LicencePlate</h3>
+                @cweet.Message
+                <br /><br />
+                Autors: <strong>@cweet.Author.ToUpper()</strong><br/>
+                <small>@cweet.TimeStamp.ToString()</small>
+            </p>
+        </div>
+    }
+</div>

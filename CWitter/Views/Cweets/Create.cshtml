@@ -1,0 +1,35 @@
+﻿@model CWitter.Data.Cweet
+
+@{
+    ViewData["Title"] = "Jauns ziņojums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="column is-half box">
+    <h4 class="title is-4">Jauns ziņojums</h4>
+    <form asp-action="Create">
+        <div class="field">
+            <label class="label">Adresāta numurzīme</label>
+            <div class="control">
+                <input asp-for="LicencePlate" class="input" placeholder="ZZ-9999">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Ziņojuma autors</label>
+            <div class="control">
+                <input asp-for="Author" class="input" placeholder="Niknais Jānis">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Ziņojums/atsauksme</label>
+            <div class="control">
+                <input asp-for="Message" class="input" placeholder="Smuks bamperis">
+            </div>
+        </div>
+
+        <div class="control">
+            <button class="button is-primary" type="submit">Sūtīt</button>
+        </div>
+    </form>
+</div>
